@@ -25,3 +25,17 @@
 
 ![Texto alternativo de imagen](img/mvc.png)
 ![Texto alternativo de imagen](img/apirest.png)
+
+## DTO (Data Transfer Object)
+### Diseñada para transferir datos entre diferentes capas de la aplicacion, por ejemplo controlador y servicio
+### DTO tiene como una logica de servicio y el objetivo es comportarse como un contenedor de nuestros datos
+### Separacion de preocupaciones o caracteristicas (funcionalidad de spring) como logica de negocio, persistencia de datos, seguridad
+
+# Diferencia entre DTO y Entidad
+
+| Característica | DTO                                        | Entidad |
+|----------------|--------------------------------------------|---------|
+| **Propósito** | Transferir datos entre capas               | Representar una tabla en la base de datos |
+| **Uso** | Interfaz de usuario o API                  | Persistencia en la base de datos |
+| **Relaciones** | Normalmente no tienen relaciones complejas | Puede incluir relaciones entre entidades |
+| **Framework** | No depende de JPA - JAVA Persistence API   | Generalmente incluye anotaciones de JPA como @Entity |
