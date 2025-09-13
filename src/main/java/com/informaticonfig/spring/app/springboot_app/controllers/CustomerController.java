@@ -22,11 +22,11 @@ public class CustomerController {
 //        return "detalle_info";
 //    }
 
-    //con un map
-    public String info(Map<String, Object> modelo) {
-        modelo.put("Titulo", "Servidor en Linea");
-        modelo.put("Servidor", "Integratel Peru");
-        modelo.put("Ip", "192.168.1.1");
+    //use interface Model for show "empleado1" object in html
+    public String info(Model model) {
+        Empleados empleado1 = new Empleados("Juan","Rodriguez","Calle1 Nro2","gerente",
+                35,970178500,002);
+        model.addAttribute("Empleado", empleado1);
 
         return "detalle_info";
     }
