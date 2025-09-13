@@ -25,7 +25,7 @@ public class CustomerController {
     //con un map
     public String info(Map<String, Object> modelo) {
         modelo.put("Titulo", "Servidor en Linea");
-        modelo.put("Servidor", "Integratel");
+        modelo.put("Servidor", "Integratel Peru");
         modelo.put("Ip", "192.168.1.1");
 
         return "detalle_info";
