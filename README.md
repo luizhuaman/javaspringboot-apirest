@@ -118,3 +118,58 @@ public class PathVariableController {
 #### Solicitud postman mediante un metodo POST, le pasamos un JSON del modelo Empleados
 ![Texto alternativo de imagen](img/postman.png)
 
+## @value: se utiliza para inyectar valores en campos, metodos o constructores a partir de una fuente de configuracion
+### Como un archivo de propiedades, archivo .yaml o variables de entorno, dinamicamente, propiedad nos sirve para externalizar nuestra configuracion
+### Se utiliza el application.properties
+
+#### Controlador PathVariableController.java
+```java
+package com.informaticonfig.spring.app.springboot_app.controllers;
+
+import com.informaticonfig.spring.app.springboot_app.models.Empleados;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/variable")
+public class PathVariableController {
+
+    @Value("${config.usuario}")
+    private String usuario;
+
+    @Value("${config.codigo}")
+    private int codigo;
+
+    @Value("${config.mensaje}")
+    private String mensaje;
+
+    @Value("${config.valores}")
+    private String[] valores;
+    
+    @GetMapping("/valores")
+    public Map<String, Object> values() {
+        Map<String, Object> json = new HashMap<>();
+        json.put("Usuario: ", usuario);
+        json.put("Codigo: ", codigo);
+        json.put("Mensaje: ", mensaje);
+        json.put("Valores: ", valores);
+
+        return json;
+    }
+}
+```
+
+#### aplication.properties
+```java
+server.port=8080
+spring.application.name=springboot-app
+config.codigo = 123456
+config.usuario = luishuaman
+config.mensaje = Hola a todos
+config.valores = saludos, alumnos, de, springboot
+```
+#### Solicitud postman mediante un metodo GET, nos devuelve los datos de config
+![Texto alternativo de imagen](img/getConfig.png)
