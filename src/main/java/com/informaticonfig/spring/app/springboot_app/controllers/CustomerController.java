@@ -24,7 +24,7 @@ public class CustomerController {
 
     //use interface Model for show "empleado1" object in html
     public String info(Model model) {
-        Empleados empleado1 = new Empleados("Juan","Rodriguez","Calle1 Nro2","gerente",
+        Empleados empleado1 = new Empleados("Juan","Rodriguez", null,"gerente",
                 35,970178500,002);
         model.addAttribute("Empleado", empleado1);
 
