@@ -44,4 +44,65 @@
 ## @ModelAttribute: anotacion que se usa para manejar datos entre controladores y vistas, especialmente como thymeleaf
 ## Se usa mucho para renderizar formularios.
 
-## @RequestParam se puede pasar datos importantes, del usuario al controlador
+## @RequestParam se puede pasar datos importantes, del usuario al controlador, es decir un valor desde la URL
+
+```java
+package com.informaticonfig.spring.app.springboot_app.controllers;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/parametros")
+public class RequestParamControllers {
+
+    //Recibe un parametro desde la pagina web que lo retorna
+    @GetMapping("/detalle")
+    public ParametroDTO detalle(@RequestParam(required = false, defaultValue = "Hola") String informacion) {
+        ParametroDTO parametro1 = new ParametroDTO();
+        if (informacion != null) { parametro1.setInformacion(informacion); }
+        return parametro1;
+
+    }
+}
+```
+- ## http://localhost:8080/api/parametros/detalle?informacion=Como%20estas
+
+    ```json
+    {
+    "informacion": "Como estas"
+    }
+    ```
+  
+## @PathVariable notacion que se utiliza para extraer valores de la URL y asignarlos a variables en un controlador
+```java
+package com.informaticonfig.spring.app.springboot_app.controllers;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/variable")
+public class PathVariableController {
+
+    @GetMapping("/pagina1/{mensaje}")
+    public ParametroDTO pagina1(@PathVariable String mensaje) {
+
+        ParametroDTO parametro1 = new ParametroDTO();
+        parametro1.setInformacion(mensaje);
+        return parametro1;
+    }
+}
+```
+
+- ## http://localhost:8080/api/variable/pagina1/Hola%20a%20todos
+
+    ```json
+    {
+    "informacion": "Hola a todos"
+  }
+    ```
