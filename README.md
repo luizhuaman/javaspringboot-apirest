@@ -106,3 +106,15 @@ public class PathVariableController {
     "informacion": "Hola a todos"
   }
     ```
+
+## Se agrego metodo POST y se probo en la herramienta @POSTMAN
+
+```java
+    @PostMapping("/solicitud")
+    public Empleados crearEmpleados(@RequestBody Empleados empleados1) {
+    return empleados1;
+}
+```
+#### Solicitud postman mediante un metodo POST, le pasamos un JSON del modelo Empleados
+![Texto alternativo de imagen](img/postman.png)
+
