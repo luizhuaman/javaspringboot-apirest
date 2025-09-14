@@ -43,3 +43,5 @@
 
 ## @ModelAttribute: anotacion que se usa para manejar datos entre controladores y vistas, especialmente como thymeleaf
 ## Se usa mucho para renderizar formularios.
+
+## @RequestParam se puede pasar datos importantes, del usuario al controlador
