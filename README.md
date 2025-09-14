@@ -39,3 +39,7 @@
 | **Uso** | Interfaz de usuario o API                  | Persistencia en la base de datos |
 | **Relaciones** | Normalmente no tienen relaciones complejas | Puede incluir relaciones entre entidades |
 | **Framework** | No depende de JPA - JAVA Persistence API   | Generalmente incluye anotaciones de JPA como @Entity |
+
+
+## @ModelAttribute: anotacion que se usa para manejar datos entre controladores y vistas, especialmente como thymeleaf
+## Se usa mucho para renderizar formularios.

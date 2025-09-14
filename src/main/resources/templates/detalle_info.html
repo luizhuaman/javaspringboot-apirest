@@ -16,5 +16,32 @@
         <li><strong>Teléfono:</strong> <span th:text="${Empleado.telefono}"></span></li>
         <li><strong>ID:</strong> <span th:text="${Empleado.id}"></span></li>
     </ul>
+
+    <h1>Lista de Empleados</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Puesto</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Departamento</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Trabajador : ${Empleados}">
+            <td th:text="${Trabajador.nombre}"></td>
+            <td th:text="${Trabajador.apellido}"></td>
+            <td th:text="${Trabajador.direccion}"></td>
+            <td th:text="${Trabajador.puesto}"></td>
+            <td th:text="${Trabajador.edad}"></td>
+            <td th:text="${Trabajador.telefono}"></td>
+            <td th:text="${Trabajador.id}"></td>
+        </tr>
+        </tbody>
+    </table>
+
 </body>
 </html>
