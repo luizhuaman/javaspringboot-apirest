@@ -173,3 +173,17 @@ config.valores = saludos, alumnos, de, springboot
 ```
 #### Solicitud postman mediante un metodo GET, nos devuelve los datos de config
 ![Texto alternativo de imagen](img/getConfig.png)
+
+## Desplegar nuestro JAR : comandos basicos
+### Construir nuestro JAR (lo genera en la carpeta target)
+- ./mvnw clean package (para consola cmd)
+- mvn clean package (para consola IntelliJ idea)
+
+### Levantar nuestro JAR en consola CMD
+- java -jar ./target/springboot-app-0.0.1-SNAPSHOT.jar
+
+### Links
+- http://localhost:8080/api/detalles_info2
+- http://localhost:8080/detalle_info
+- http://localhost:8080/api/parametros/detalle?informacion=Como%20estas
+- http://localhost:8080/api/variable/pagina1/Hola%20a%20todos
